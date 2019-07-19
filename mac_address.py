@@ -6,9 +6,11 @@ mycmd = os.popen('ip link show').read()
 
 # regex expression for mac address 
 p = re.compile(r'^[a-fA-F0-9:]{17}|[a-fA-F0-9]{12}$', re.IGNORECASE)
-
+# eliminate two following address:
 f='ff:ff:ff:ff:ff:ff'
 e='00:00:00:00:00:00'
+
+# convert a string to a list
 m= mycmd.split(' ')
 
 # find mac address
